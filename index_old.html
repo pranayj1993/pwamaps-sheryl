@@ -1,0 +1,1044 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PWA Map Services</title>
+    <link rel="apple-touch-icon" href="images/icon180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/icon180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="splashscreens/iphone5_splash.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphone6_splash.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphoneplus_splash.png"
+        media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonex_splash.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipad_splash.png"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro1_splash.png"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro2_splash.png"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#d8e8c8" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/emap.css" />
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/i3.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/sgds.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+	
+    <link rel="stylesheet" href="css/datepicker.css" />
+    <link rel="stylesheet" href="css/idangerous.swiper.css" />
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/pikaday.css" />
+    <link rel="stylesheet" href="css/sentiments-popup-2.css" />
+	
+    <link rel=preconnect href="https://docs.onemap.sg">
+    <script src="leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+
+</head>
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+<header class="header" role="banner">	
+		<div class="mast_head">   		
+			<div class="wrapper_width">    		
+				<a href="https://www.gov.sg" target="_blank">
+				
+      						<img id="" src="img/lion-head.png" onclick="showCarPark()"/>	<span class="is-text">A Singapore Government Agency Website</span>    
+				</a>   			
+			</div>			
+		</div>				
+		<div class="nav-bar">   
+		<div class="clearfix">     	
+		<div class="wrapper_width">      							<div class="hidden-for-medium-only hidden-for-small-only left clearfix">          							<div class="site-logo">            							<a href="http://www.hdb.gov.sg/cs/infoweb/homepage" class="link">               							<img src="https://services2.hdb.gov.sg/web/fi10/infoweb/common/images/site-logo-small.png" alt="Housing &amp; Development Board Logo" class="site-logo-img">                   						<h2 class="visuallyhidden">Housing &amp; Development Board</h2>            							</a>          							</div>      							</div><nav class="mobile-nav mobile_dropdown" role="navigation" aria-hidden="true">
+<div class="mobile-search hidden-for-large-only hidden-for-xlarge-only hidden-for-xxlarge-only">
+<div action="/search/" role="search">
+<label for="inputSearchMobile" class="visuallyhidden">Search Keyword</label>
+<input type="search" id="inputSearchMobile" class="input-txt js-input-search ignore" aria-label="Keyword" name="searchKeyword" placeholder="Search our website">
+<button type="submit" class="site-search-btn" aria-label="submit form">
+<span class="visuallyhidden">Search</span>
+<span class="sgds-icon sgds-icon-search"></span>
+</button>
+</div>
+</div>
+	<ul class="list">
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us" class="link">About Us</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/vision-mission-and-values" class="link">Vision, Mission, and Values</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/our-role" class="link">Our Role</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/our-logo" class="link">Our Logo</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/history" class="link">History</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/organisation-structure" class="link">Organisation Structure</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/achievements-and-accolades" class="link">Achievements and Accolades</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/careers" class="link">Careers</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/scholarships-and-internships" class="link">Scholarships and Internships</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications" class="link">News and Publications</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/about-us/events-and-talks" class="link">Events and Talks</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential" class="link">Residential</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat" class="link">Buying a Flat </a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/financing-a-flat-purchase" class="link">Financing a Flat Purchase</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/servicing-your-hdb-loan" class="link">Servicing Your HDB Housing Loan</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/selling-a-flat" class="link">Selling a Flat</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/renting-a-flat" class="link">Renting a Flat</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/renting-out-a-flat-room" class="link">Renting Out a Flat/ Bedroom</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat" class="link">Living in an HDB Flat</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/residential/season-parking" class="link">Season Parking</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/heartlandbeat" class="link">Community</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/hdb-community-week-2019" class="link">HDB Community Week 2019</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/enjoy-vibrant-community-places" class="link">Creating Vibrant Places</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/care-for-your-neighbours" class="link">Care for Your Neighbours</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/practise-eco-living" class="link">Practise Eco-Living</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/getting-involved" class="link">Getting Involved</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/community/community-publications" class="link">Community Publications</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/Satellite?c=Page&amp;cid=1383798897891&amp;pagename=InfoWEB%2FPage%2FExternalPage" class="link">New and Upcoming Events</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business" class="link">Business</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/commercial" class="link">Commercial</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/industrial" class="link">Industrial</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/building-professionals" class="link">Building Professionals (BGBiz)</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/renovation-and-repair-contractors" class="link">Renovation and Repair Contractors</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/land-developers-and-land-users" class="link">Land Developers and Land Users</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/tenderers" class="link">Tenderers </a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/business/estate-agents-and-salespersons" class="link">Estate Agents and Salespersons</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks" class="link">Car Parks</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/types-of-hdb-car-parks" class="link">Types of HDB Car Parks</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-park-signboards" class="link">Car Park Signboards</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/parking-lot-line-markings" class="link">Parking Lot Line Markings</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-park-location-map" class="link">Car Park Location Map</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/parking-offences" class="link">Parking Offences</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/season-parking" class="link">Season Parking</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/short-term-parking" class="link">Short-Term Parking</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-parks-for-business-activities" class="link">Car Parks for Business Activities</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList" class="link">e-Services</a>
+				<a tabindex="-1" href="#" class="mobile-nav-expand js-mobile-nav-expand">
+		<i class="sgds-icon sgds-icon-chevron-down"></i>
+	</a>
+<div class="mobile-nav-subpanel">
+	<ul class="list">
+			<li class="mobile-nav-item">
+			<a tabindex="-1" href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Buying_a_New_Flat" class="link">Residential</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Commercial" class="link">Business</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Car_Park_Information" class="link">Car Parks</a>
+			
+		</li>
+		<li class="mobile-nav-item">
+			<a tabindex="-1" href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=General" class="link">General</a>
+			
+		</li>
+ </ul>
+</div>
+		</li>
+    </ul>
+</nav>    <nav class="primary-nav desktop_menu" role="navigation">
+      <ul class="primary-nav-list list clearfix">
+			<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us" class="primary-nav-link">
+	  	About Us
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+   <a href="http://www.hdb.gov.sg/cs/infoweb/about-us">About Us</a>
+   <div>The Housing &amp; Development Board (HDB) is Singapore's public housing authority and a statutory board under the Ministry of National Development. We develop public housing to provide Singaporeans with affordable, quality homes, and a better living environment. Focusing on nurturing a strong family and community spirit, public housing policies and schemes are formulated to meet changing needs and aspirations.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/vision-mission-and-values" class="link mega-nav-title">
+    	Vision, Mission, and Values
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/our-role" class="link mega-nav-title">
+    	Our Role
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/our-logo" class="link mega-nav-title">
+    	Our Logo
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/history" class="link mega-nav-title">
+    	History
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/organisation-structure" class="link mega-nav-title">
+    	Organisation Structure
+   </a>
+</li>
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/achievements-and-accolades" class="link mega-nav-title">
+    	Achievements and Accolades
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/careers" class="link mega-nav-title">
+    	Careers
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/scholarships-and-internships" class="link mega-nav-title">
+    	Scholarships and Internships
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications" class="link mega-nav-title">
+    	News and Publications
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/about-us/events-and-talks" class="link mega-nav-title">
+    	Events and Talks
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential" class="primary-nav-link">
+	  	Residential
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+    <a href="http://www.hdb.gov.sg/cs/infoweb/residential">Residential</a>
+   <div>Whether you are buying, selling, or already living in an HDB flat, everything you need to know about residential properties is housed here.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat" class="link mega-nav-title">
+    	Buying a Flat 
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/financing-a-flat-purchase" class="link mega-nav-title">
+    	Financing a Flat Purchase
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/servicing-your-hdb-loan" class="link mega-nav-title">
+    	Servicing Your HDB Housing Loan
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/selling-a-flat" class="link mega-nav-title">
+    	Selling a Flat
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/renting-a-flat" class="link mega-nav-title">
+    	Renting a Flat
+   </a>
+</li>
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/renting-out-a-flat-room" class="link mega-nav-title">
+    	Renting Out a Flat/ Bedroom
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat" class="link mega-nav-title">
+    	Living in an HDB Flat
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/residential/season-parking" class="link mega-nav-title">
+    	Season Parking
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/heartlandbeat" class="primary-nav-link">
+	  	Community
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+   <a href="http://www.hdb.gov.sg/cs/infoweb/community">Community</a>
+   <div>More than homes, our HDB towns are vibrant places to enjoy to the fullest. There is so much in place for you to bond with your neighbours and create an active and cohesive community.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/hdb-community-week-2019" class="link mega-nav-title">
+    	HDB Community Week 2019
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/enjoy-vibrant-community-places" class="link mega-nav-title">
+    	Creating Vibrant Places
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/care-for-your-neighbours" class="link mega-nav-title">
+    	Care for Your Neighbours
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/practise-eco-living" class="link mega-nav-title">
+    	Practise Eco-Living
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/getting-involved" class="link mega-nav-title">
+    	Getting Involved
+   </a>
+</li>
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/community/community-publications" class="link mega-nav-title">
+    	Community Publications
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/Satellite?c=Page&amp;cid=1383798897891&amp;pagename=InfoWEB%2FPage%2FExternalPage" class="link mega-nav-title">
+    	New and Upcoming Events
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business" class="primary-nav-link">
+	  	Business
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+   <a href="http://www.hdb.gov.sg/cs/infoweb/business">Business </a>
+   <div>Get the information you need for any business involving HDB homes, properties, commercial spaces, or land under our management.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/commercial" class="link mega-nav-title">
+    	Commercial
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/industrial" class="link mega-nav-title">
+    	Industrial
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/building-professionals" class="link mega-nav-title">
+    	Building Professionals (BGBiz)
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/renovation-and-repair-contractors" class="link mega-nav-title">
+    	Renovation and Repair Contractors
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/land-developers-and-land-users" class="link mega-nav-title">
+    	Land Developers and Land Users
+   </a>
+</li>
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/tenderers" class="link mega-nav-title">
+    	Tenderers 
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/business/estate-agents-and-salespersons" class="link mega-nav-title">
+    	Estate Agents and Salespersons
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks" class="primary-nav-link">
+	  	Car Parks
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+   <a href="http://www.hdb.gov.sg/cs/infoweb/car-parks">Car Parks</a>
+   <div>You can find out more about the types of HDB car parks, important car park information, and parking offences.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/types-of-hdb-car-parks" class="link mega-nav-title">
+    	Types of HDB Car Parks
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-park-signboards" class="link mega-nav-title">
+    	Car Park Signboards
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/parking-lot-line-markings" class="link mega-nav-title">
+    	Parking Lot Line Markings
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-park-location-map" class="link mega-nav-title">
+    	Car Park Location Map
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/parking-offences" class="link mega-nav-title">
+    	Parking Offences
+   </a>
+</li>
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/season-parking" class="link mega-nav-title">
+    	Season Parking
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/short-term-parking" class="link mega-nav-title">
+    	Short-Term Parking
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="http://www.hdb.gov.sg/cs/infoweb/car-parks/car-parks-for-business-activities" class="link mega-nav-title">
+    	Car Parks for Business Activities
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+<!-- primary-item -->
+	<li class="primary-nav-item js-primary-nav" id="nav-about-us">
+	<a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList" class="primary-nav-link">
+	  	e-Services
+	  </a> 
+	      <div class="megamenu-panel" style="display: none;">
+           <div class="wrapper">
+                <nav class="mega-nav">
+                    <div class="menu_content">
+   <a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList">e-Services</a>
+   <div>Transact with us at your convenience. You can submit an application, submit an online enquiry, or make an appointment with us.</div>
+ </div>         
+                   <div class="menu_options">
+                           <ul class="list">
+                                     <div class="col">
+        <ul class="list">
+        </ul>
+      </div> 
+      <div class="col">
+        <ul class="list">
+<li class="mega-nav-item js-mega-nav">
+	<a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Buying_a_New_Flat" class="link mega-nav-title">
+    	Residential
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Commercial" class="link mega-nav-title">
+    	Business
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=Car_Park_Information" class="link mega-nav-title">
+    	Car Parks
+   </a>
+</li>
+<li class="mega-nav-item js-mega-nav">
+	<a href="https://services2.hdb.gov.sg/webapp/FI10AWESVCLIST/FI10SEServiceList?category=General" class="link mega-nav-title">
+    	General
+   </a>
+</li>
+        </ul>
+      </div> 
+                           </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+	</li>
+<!-- end-primary-item -->
+      </ul>
+    </nav>   							<div class="hidden-for-large-only mobile-site-logo hidden-for-xlarge-only hidden-for-xxlarge-only">       							<a href="http://www.hdb.gov.sg/cs/infoweb/homepage" class="link">           							<img src="https://services2.hdb.gov.sg/web/fi10/infoweb/common/images/site-logo-small.png" alt="Housing &amp; Development Board Logo" class="site-logo-img">       							</a>   							</div>   							<div class="right clearfix"> <div id="loginButtn"> </div>
+	</div>
+	</div>
+	</div> 
+</header>
+
+
+<div class="title-section" id="main">
+	<div class="row fit-padding-bottom">
+			<h1>HDB Map Services</h1>
+				<p class="e-desc">
+					Get useful information on HDB housing matters and locations of HDB's flats, car parks, shops and businesses
+				</p>
+		</div>
+	</div>
+</div>
+<section class="page-header">
+			<div class="wrapper" id="jumpHeader">
+				<nav class="hdb-breadcrumbs large-8 desktop columns">
+					<a href="/" class="breadcrumb">Home</a>
+					<a href="#" class="breadcrumb">Map Services</a>
+				</nav>
+			</div>
+		</section>
+		<div class="emap-search large-5 small-12 columns" style="padding-top: 15px; border: 0px;">
+			<div class="search-input">
+					<input class="emap-search-input js-emap-search-input" id="searchText" type="text" name="q" id="searchTxt" aria-label="searchTxt" style="z-index: 1001; position: absolute;" placeholder="Enter address, car park, or landmark" title="Search">
+					<button id="searchButton" class="btn-emap-searchBtn" title="Search" style="border-top-right-radius: 0;border-bottom-right-radius: 0; z-index: 1001;" onclick="CallTheme()"><span class="visuallyhidden">Search</span></button>
+					<input type="hidden" name="searchVal" id="searchVal"><input type="hidden" name="postalCode" id="postalCode"><input type="hidden" name="blk" id="blk">
+					<input type="hidden" name="streetNme" id="streetNme">
+					<!-- Locate my current location -->
+					<button id="locateButton" class="btn-emap-locate" title="Locate my current position" onclick="getLocation()"><i class="icon-locate"></i><span class="visuallyhidden">Location</span></button>		
+			</div>
+		</div>
+		<div style="margin-left:80%">
+		
+			<a href="#"  id="menuHouse">
+				<img id="" src="img/houseIcon.png"/>
+			</a>
+			<a id="CARPARKS" >
+				<img id="" src="img/carParksIcon.png" onclick="showCarPark()"/>
+			</a>
+			<a href="#" id="SHOPS">
+				<img id="" src="img/shopIcon.png"/>
+			</a>
+		
+	</div>	
+<!--	<div>
+	<div id='search'>
+		<input type="text" name="searchText" id="searchText"
+			placeholder="Enter car park" title="Search" style="height:30px; width:300px;"/>
+		<button id="searchButton" title="search" style="height:30px; width:100px;">search</button>
+		<img id="" src="img/locateMe.png" onclick="getLocation()"/>
+	</div>
+
+
+	<div style="margin-left:75%">
+		<li id="houseIconMap" class="" style=">
+			<a href="#"  id="menuHouse">
+				<img id="" src="img/houseIcon.png"/>
+			</a>
+			<a id="CARPARKS" >
+				<img id="" src="img/carParksIcon.png" onclick="showCarPark()"/>
+			</a>
+			<a href="#" id="SHOPS">
+				<img id="" src="img/shopIcon.png"/>
+			</a>
+		</li>
+	</div>	-->
+<!--Creates a Div for Map-->
+<div id='map' style='height:100%; width:100%; float:right;'></div>
+
+<div class="notif" style="display: block; background: rgb(224, 224, 224);">
+	<div class="notif-message wrapper row medium-11 small-10">
+	<div class="notif-border show-for-medium-down"></div>
+		<div class="notif-title large-12 columns">Events Calendar</div>	
+		<div class="notif-content large-12 columns">Check out and join us at <a href="http://www20.hdb.gov.sg/fi10/fi10341p.nsf/new-and-upcoming-events?OpenForm" id="notif-link" target="_blank">community events</a> happening around you!</div>
+	</div>
+</div>
+
+
+<footer>                   <div class="wrapper row">                    <div class="footer-eservice-links large-12 columns">													<ul class="list inline-list top"> <li class="first"><a class="cta dark" href="http://www.hdb.gov.sg/cs/infoweb/hdb-map-services/get-help" target="_blank"><span class="icon icon-help"></span>Get Help</a> </li> <li><a href="https://services2.hdb.gov.sg/webapp/BF12AWFeedback/BF12SFrontController?service=ServiceFeedback&amp;operation=createFeedback&amp;FB_Subject=E-Service&amp;FB_EServiceID=E000030&amp;FB_EServiceURL=https%3A%2F%2Fservices2.hdb.gov.sg%2Fweb%2Ffi10%2Femap.html" class="cta dark" target="_blank"><span class="icon icon-feedback"></span>Feedback</a> </li></ul>										 </div>										</div><div class="footer">   <div class="wrapper row">       <div class="back-to-top is-visible">           <a href="javascript:;" class="back-to-top-link js-back-to-top" aria-label="backtotop">               <span class="icon icon-chevron2-up"></span>           </a>       </div>       <div class="footer_title">Housing &amp; Development Board</div>   </div><div class="row">
+		<div class="col is-right-desktop-only">
+		    <ul>
+			    <li class="is-inline-block-desktop-only"><a href="http://www.hdb.gov.sg/cs/infoweb/contact-us" class="footer-social-channels-text">Contact Us</a></li>
+				<li class="is-inline-block-desktop-only"><a href="http://www20.hdb.gov.sg/fi10/fi10400p.nsf/FI10FHDBService/?OpenForm&amp;feature=feedback" class="footer-social-channels-text">Feedback</a></li>
+				<li class="is-inline-block-desktop-only"><a class="footer-social-channels-text" href="http://askhdb.hdb.gov.sg/">FAQ</a></li>
+				<li class="is-inline-block-desktop-only social_icons_whole">
+				    <div class="social_links">
+					    <a href="https://www.facebook.com/SingaporeHDB" target="_blank" class="social-channel fb">
+							<span class="visuallyhidden">Facebook</span>
+							<span class="sgds-icon sgds-icon-facebook-alt"></span>
+						</a>
+					</div>
+					<div class="social_links">
+                       <a href="https://www.twitter.com/SingaporeHDB" target="_blank" class="social-channel twitter">
+                           <span class="visuallyhidden">Twitter</span>
+                           <span class="sgds-icon  sgds-icon-twitter"></span>
+                        </a>
+                   </div>
+					<div class="social_links">
+                       <a href="https://t.me/SingaporeHDB" target="_blank" class="social-channel telegram">
+                           <span class="visuallyhidden">Telegram</span>
+                           <span class="sgds-icon  sgds-icon-telegram"></span>
+                        </a>
+                   </div>
+					<div class="social_links">
+                       <a href="http://www.linkedin.com/company/singaporehdb" target="_blank" class="social-channel linkedin">
+                           <span class="visuallyhidden">LinkedIn</span>
+                           <span class="sgds-icon  sgds-icon-linkedin-alt"></span>
+                        </a>
+                   </div>
+                   <div class="social_links">
+                       <a href="https://www.youtube.com/user/singaporeHDB" target="_blank" class="social-channel youtube">
+                          <span class="visuallyhidden">Youtube</span>
+                          <span class="sgds-icon sgds-icon-youtube"></span>
+                       </a>
+					</div>
+					<div class="social_links">
+                       <a href="https://mynicehome.sg" target="_blank" class="social-channel mynicehome">
+                                 <span class="visuallyhidden">MyNiceHome</span>
+                       </a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col mobilehdb_img">
+		<div class="sub_service">
+           <a href="https://services2.hdb.gov.sg/webapp/BF08CESS/Index.jsp">
+				Subscribe to HDB eAlert Service
+			</a>
+		</div>
+		<div>
+           <a href="http://www.hdb.gov.sg/cs/infoweb/mobile-hdb">
+				Download Mobile@HDB
+			</a>
+		</div>
+   	</div>
+	</div>   <section class="footer-bottom">       <div class="wrapper row">           <div class="small-12 columns">               <div class="footer-border"></div>           </div>           <nav class="secondary-footer-nav  small-12 large-8 columns ">               <a href="https://www.tech.gov.sg/report_vulnerability" class="secondary-footer-nav-link">Report Vulnerability</a>               <a href="http://www.hdb.gov.sg/cs/infoweb/privacy-statement" class="secondary-footer-nav-link">Privacy Statement</a>               <a href="http://www.hdb.gov.sg/cs/infoweb/terms-of-use" class="secondary-footer-nav-link">Terms of Use</a>               <a href="http://www.hdb.gov.sg/cs/infoweb/sitemap" class="secondary-footer-nav-link">Sitemap</a>               <a href="http://www.hdb.gov.sg/cs/infoweb/site-requirements" class="secondary-footer-nav-link">Site Requirements</a>           </nav>           <div class="last-review small-12 large-4 columns">               <p class="">© 2020 Housing &amp; Development Board.</p>           </div>       </div>     </section>	</div></footer>
+
+<script>
+    //Initialize OneMap and select one style
+    //The parameters are Div name,Map style(default,night grey,original),Zoom, Latitude, Longitude and Opacity
+    var map = onemap.initializeMap('map', "default", 11, 1.3, 103.8, 0.8)
+    map.locate({ setView: true, maxZoom: 11 });
+    var flag = "true";
+    var geojson;
+
+    //Setup configuration for REST API Services (Your Access Token)
+    //Our Documentation @  https://docs.onemap.sg
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ0MDcsInVzZXJfaWQiOjQ0MDcsImVtYWlsIjoic2hlcnlsLnllby4yMDE2QHNpcy5zbXUuZWR1LnNnIiwiZm9yZXZlciI6ZmFsc2UsImlzcyI6Imh0dHA6XC9cL29tMi5kZmUub25lbWFwLnNnXC9hcGlcL3YyXC91c2VyXC9zZXNzaW9uIiwiaWF0IjoxNTg5MDc2NDcwLCJleHAiOjE1ODk1MDg0NzAsIm5iZiI6MTU4OTA3NjQ3MCwianRpIjoiNzNkMWFiOGFiZGNjZTMxYTZiMmU4MzYwNDYwZmRjMWEifQ.f9gurj39o9wJjjcaVTpvyEf_5WKAL8utyHODPW0JZMs";
+    onemap.config(token);
+
+
+    
+
+function showCarPark()
+{ 
+if(flag=="true")
+{
+flag = "false";
+ var carpark = document.getElementById("searchText").value;
+  var themeObj = onemap.retrieveTheme("hdb_car_park_information");
+
+    //Convert Themes that are Points into GeoJSON for overlaying
+    var data = onemap.pointTheme2GeoJSON(themeObj);
+
+    //Add GeoJSON to map
+    geojson = L.geoJSON(data, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup('<h1>' + feature.properties.DESCRIPTION + '</h1><p>Description: ' + feature.properties.NAME + '</p>');
+            //Sets Icon information
+            var icon = L.icon({
+                iconUrl: 'img/parking.png',
+                iconSize: [30, 30]
+            });
+            layer.setIcon(icon)
+        }
+    });
+
+
+    geojson.addTo(map);
+
+//var marker = L.marker([center.x, center.ys]).addTo(mymap);
+    //Fit bound to markers
+   // map.fitBounds(geojson.getBounds());
+// map.locate({ setView: true, maxZoom: 15 });
+ //CallTheme();
+
+}
+else
+{
+flag = "true";
+
+  
+    onemap.removeLayer(map,geojson);
+
+
+}
+}
+
+
+//Call Theme Services
+ function CallTheme(){
+var x;
+var y;
+var searchTxt = document.getElementById("searchText").value; 
+        $.ajax({
+        url: 'https://developers.onemap.sg/commonapi/search?searchVal=' + searchTxt +'&returnGeom=Y&getAddrDetails=Y&pageNum=1',
+        success: function(result){
+            //Set result to a variable for writing
+            var TrueResult = JSON.stringify(result);
+          var TrueResult = result;
+           // document.write(TrueResult);
+        // var JSONSUB= result.results;
+	 //var LATITUDE= JSON.stringify(JSONSUB);
+           //var LONGITUDE= LATITUDE ["Y"];
+	   // alert(LONGITUDE);
+	for (i in TrueResult.results) {
+  		x = TrueResult.results[i].LATITUDE ; 
+		y = TrueResult.results[i].LONGITUDE ; 
+	}
+	/*
+
+	//showPosition(x,y);
+	var cpicon = L.icon({
+                iconUrl: 'img/parking.png',
+                iconSize: [50, 50]
+            });
+	
+	L.marker([x,y], {icon: cpicon}).addTo(map);	*/
+			
+		var lat = x;
+        var lng = y;
+        $.ajax({
+            url: 'https://developers.onemap.sg/privateapi/commonsvc/revgeocode?location=' + lat + ',' + lng + '&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQzODEsInVzZXJfaWQiOjQzODEsImVtYWlsIjoic2hlcnlsLnllby4yMDE2QHNtdS5lZHUuc2ciLCJmb3JldmVyIjpmYWxzZSwiaXNzIjoiaHR0cDpcL1wvb20yLmRmZS5vbmVtYXAuc2dcL2FwaVwvdjJcL3VzZXJcL3Nlc3Npb24iLCJpYXQiOjE1ODg4MzExMTIsImV4cCI6MTU4OTI2MzExMiwibmJmIjoxNTg4ODMxMTEyLCJqdGkiOiI0MzcwMDdkOTA5NDM0ODhmNzZkZjlhNmI3ZDhlZGQzZCJ9.CV5lgfnEX6Ul2FpuWsXShIvIOX_tfbGKlL_pBgu2NWA&buffer=100&addressType=all',
+            success: function (result) {
+                var buildName = result.GeocodeInfo[0].BUILDINGNAME;
+                var block = result.GeocodeInfo[0].BLOCK;
+                var road = result.GeocodeInfo[0].ROAD;
+                var popup = L.popup().setLatLng(
+                    [lat, lng])
+                    .setContent(buildName + ', ' + block + ', ' + road).openOn(map);
+            }
+        });
+
+
+            }});
+        }
+</script>
+
+
+<script async>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+        }
+    }
+
+    function showPosition(position) {
+        marker = new L.Marker([position.coords.latitude,
+        position.coords.longitude], {
+            bounceOnAdd: false
+        }).addTo(map);
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        $.ajax({
+            url: 'https://developers.onemap.sg/privateapi/commonsvc/revgeocode?location=' + lat + ',' + lng + '&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQzODEsInVzZXJfaWQiOjQzODEsImVtYWlsIjoic2hlcnlsLnllby4yMDE2QHNtdS5lZHUuc2ciLCJmb3JldmVyIjpmYWxzZSwiaXNzIjoiaHR0cDpcL1wvb20yLmRmZS5vbmVtYXAuc2dcL2FwaVwvdjJcL3VzZXJcL3Nlc3Npb24iLCJpYXQiOjE1ODg4MzExMTIsImV4cCI6MTU4OTI2MzExMiwibmJmIjoxNTg4ODMxMTEyLCJqdGkiOiI0MzcwMDdkOTA5NDM0ODhmNzZkZjlhNmI3ZDhlZGQzZCJ9.CV5lgfnEX6Ul2FpuWsXShIvIOX_tfbGKlL_pBgu2NWA&buffer=100&addressType=all',
+            success: function (result) {
+                var buildName = result.GeocodeInfo[0].BUILDINGNAME;
+                var block = result.GeocodeInfo[0].BLOCK;
+                var road = result.GeocodeInfo[0].ROAD;
+                var popup = L.popup().setLatLng(
+                    [position.coords.latitude, position.coords.longitude])
+                    .setContent(buildName + ', ' + block + ', ' + road).openOn(map);
+            }
+        });
+    }
+
+</script>
+
+
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+
+</script>
+</body>
+
+</html>
